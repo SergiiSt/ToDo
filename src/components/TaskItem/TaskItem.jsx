@@ -1,6 +1,7 @@
 import { FaRegCircle } from "react-icons/fa";
 import { FaRegCheckCircle } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
+import { RiEdit2Fill } from "react-icons/ri";
 import css from "./TaskItem.module.css";
 
 export default function TaskItem({ task, deleteTask, toogleTask, editTask }) {
@@ -22,17 +23,29 @@ export default function TaskItem({ task, deleteTask, toogleTask, editTask }) {
   return (
     <>
       <li className={css.taskitem}>
-        <button onClick={handleToogle} disabled={task.completed}>
+        <button
+          onClick={handleToogle}
+          disabled={task.completed}
+          className={css.togglebutton}
+        >
           {task.completed ? (
-            <FaRegCheckCircle />
+            <FaRegCheckCircle className={css.checkicon} />
           ) : (
-            <FaRegCircle className={css.checkicon} />
+            <FaRegCircle className={css.uncheckicon} />
           )}
         </button>
 
-        <p className={css.text}>{task.text}</p>
+        <p
+          className={css.text}
+          style={{
+            textDecoration: task.completed ? "line-through" : "none",
+            color: task.completed ? "gray" : "black",
+          }}
+        >
+          {task.text}
+        </p>
         <button className={css.editbutton} onClick={handleEdit}>
-          Edit
+          <RiEdit2Fill className={css.editicon} />
         </button>
         <button className={css.trashbutton} onClick={handleDelete}>
           <FaTrashAlt className={css.trashicon} />

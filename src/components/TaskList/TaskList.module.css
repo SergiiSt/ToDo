@@ -1,0 +1,16 @@
+.notasks {
+  font-size: 30px;
+  font-weight: bold;
+  color: #555;
+}
+
+.tasklist {
+  padding: 50px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #f4f3f0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import css from "./TaskInput.module.css";
 
 export default function TaskInput({ addTask }) {
   const [text, setText] = useState("");
@@ -8,23 +9,31 @@ export default function TaskInput({ addTask }) {
       completed: false,
       text,
     };
-      if (text.trim() === "") {
-        alert("Task text cannot be empty!");
-        return;
-      }
+    if (text.trim() === "") {
+      alert("Task text cannot be empty!");
+      return;
+    }
     addTask(newTask);
     setText("");
   }
 
   return (
-    <>
+    <div className={css.taskinput}>
       <input
         type="text"
         placeholder="Enter your task here..."
         value={text}
         onChange={(e) => setText(e.target.value)}
+        className={css.input}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            handleAdd();
+          }
+        }}
       />
-      <button onClick={handleAdd}>Add</button>
-    </>
+      <button onClick={handleAdd} className={css.addbtn}>
+        Add
+      </button>
+    </div>
   );
 }

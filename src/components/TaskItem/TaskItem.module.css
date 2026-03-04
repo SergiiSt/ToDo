@@ -8,11 +8,31 @@
   min-height: 47px;
   padding: 0 20px 0 20px;
   text-align: start;
+  background-color: #fff;
+
+}
+
+.togglebutton {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 30px;
 }
 
 .checkicon {
+  fill: green;
+  width: 30px;
+  height: 30px;
+}
+
+.uncheckicon {
   fill: orangered;
-  margin-right: 30px;
   width: 30px;
   height: 30px;
 }
@@ -20,6 +40,24 @@
 .text {
   font-size: 30px;
   margin-right: auto;
+}
+
+.editbutton {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.editicon {
+  fill: blue;
+  width: 20px;
+  height: 20px;
 }
 
 .trashbutton {
