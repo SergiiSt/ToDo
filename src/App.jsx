@@ -38,6 +38,11 @@ function App() {
     );
   }
 
+  function clearAll() {
+    localStorage.removeItem("tasks");
+    setTasks([]);
+  }
+
   return (
     <>
       <TaskInput addTask={addTask} />
@@ -46,6 +51,7 @@ function App() {
         deleteTask={deleteTask}
         toogleTask={toogleTask}
         editTask={editTask}
+        clearAll={clearAll}
       />
     </>
   );

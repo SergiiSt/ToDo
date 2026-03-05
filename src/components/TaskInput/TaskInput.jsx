@@ -20,6 +20,7 @@ export default function TaskInput({ addTask }) {
   return (
     <div className={css.taskinput}>
       <input
+        name="task"
         type="text"
         placeholder="Enter your task here..."
         value={text}
@@ -28,6 +29,8 @@ export default function TaskInput({ addTask }) {
         onKeyDown={(e) => {
           if (e.key === "Enter") {
             handleAdd();
+          } else if (e.key === "Escape") {
+            setText("");
           }
         }}
       />
